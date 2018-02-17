@@ -10,11 +10,7 @@ const serviceAccount = require("/home/igortullio/Documentos/Madden-Companion-Exp
 
 // TODO: Enter your database url from firebase
 admin.initializeApp({
-  credential: admin.credential.cert({
-    projectId: "maddenigortullio", 
-    clientEmail: "foo@maddenigortullio.iam.gserviceaccount.com",
-    privateKey: "-----BEGIN PRIVATE KEY-----\nAIzaSyCEM31JEXTM5nHJV_z67noLGuf_4RXqMaM\n-----END PRIVATE KEY-----\n"
-  }),
+  credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://maddenigortullio.firebaseio.com"
 });
 
