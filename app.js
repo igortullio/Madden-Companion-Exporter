@@ -6,13 +6,18 @@ const app = express();
 
 // TODO: Enter the path to your service account json file
 // Need help with this step go here: https://firebase.google.com/docs/admin/setup
-const serviceAccount = require("path/to/serviceAccountKey.json");
+const serviceAccount = require("/home/igortullio/Documentos/Madden-Companion-Exporter/maddenigortullio-firebase-adminsdk-09zbb-e7a4f6636d.json");
 
 // TODO: Enter your database url from firebase
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
+  credential: admin.credential.cert({
+    projectId: "maddenigortullio", 
+    clientEmail: "foo@maddenigortullio.iam.gserviceaccount.com",
+    privateKey: "-----BEGIN PRIVATE KEY-----\nAIzaSyCEM31JEXTM5nHJV_z67noLGuf_4RXqMaM\n-----END PRIVATE KEY-----\n"
+  }),
   databaseURL: "https://maddenigortullio.firebaseio.com"
 });
+
 
 // Setup
 // Change the default port here if you want for local dev.
